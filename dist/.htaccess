@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{HTTP_HOST} ^www\.oekraiensevrienden\.nl [NC]
+  RewriteRule ^(.*)$ https://oekraiensevrienden.nl/$1 [L,R=301]
+
+  RewriteCond %{SERVER_PORT} 80
+  RewriteRule ^(.*)$ https://oekraiensevrienden.nl/$1 [R,L]
+</IfModule>
